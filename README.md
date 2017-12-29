@@ -23,12 +23,15 @@ void setup() {
 
     // use LOG() for printf-like logging
     LOG("hello, log4arduino.");
-    LOG("use %s formatting: %d+%d=%0x02d", "printf", 9, 1, 10);
+    LOG("use %s formatting: %d %c %d %c %d", "printf", 9, '+', 1, '=', 10);
+    constexpr uint32_t magic = 3735928559;
+    LOG("hex output: %lu == 0x%lX", magic, magic);
 
     // use LOGS() for simple logging of single arguments
-    const char *pStr = "some string";
+    const char *pStr = "some string from RAM";
     LOGS(pStr);
-    LOGS(String("some string object"));
+    LOGS(F("this string is stored in flash memory"));
+    LOGS(String("some String object"));
     LOGS(123);
 }
 
