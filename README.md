@@ -1,5 +1,7 @@
 # log4arduino
 
+[![Build Status](https://travis-ci.org/jandelgado/log4arduino.svg?branch=master)](https://travis-ci.org/jandelgado/log4arduino)
+
 A lightweight, no-frills logging library for Arduino & friends.
 
 * simple interface - just three macros
