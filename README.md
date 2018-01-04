@@ -6,7 +6,7 @@ A lightweight, no-frills logging library for Arduino & friends.
 
 * simple interface - just three macros
 * printf-like formatting
-* each log entry is prepended by timestamp and amount of avail free RAM
+* each log entry is prepended by timestamp and amount of available free RAM
 * automatically uses flash memory to save SRAM (if supported)
 * log target can be any subclass of class `Printer`, e.g. class `Serial`
 * zero memory footprint when turned off
@@ -52,6 +52,28 @@ will print out the following on the `Serial` interface:
 
 The actual log messages are preceeded by the current time as returned by
 `millis()` as well as the free heap space, e.g. `91(1695):`.
+
+## Installation
+
+### Arduino IDE
+
+In the main menu of the Arduino IDE, select `Sketch` > `Include Library` >
+`Manage Libraries...` and search for `log4arduino`, then press `install`.
+
+### PlatformIO
+
+Add `log4arduino` to your library dependencies in your `platformio.ini` project
+file, e.g.
+
+```ini
+...
+[env:nanoatmega328]
+platform = atmelavr
+board = nanoatmega328
+framework = arduino
+lib_deps=log4arduino
+...
+```
 
 ## API
 
