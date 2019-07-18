@@ -72,8 +72,11 @@ platform = atmelavr
 board = nanoatmega328
 framework = arduino
 lib_deps=log4arduino
+build_flags=-DENABLE_LOG4ARDUINO
 ...
 ```
+
+With the `build_flags` option, you can enable/disable log4arduino at build time.
 
 ## API
 
