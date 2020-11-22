@@ -1,6 +1,6 @@
 # log4arduino
 
-[![Build Status](https://travis-ci.org/jandelgado/log4arduino.svg?branch=master)](https://travis-ci.org/jandelgado/log4arduino)
+![build](https://github.com/jandelgado/log4arduino/workflows/build/badge.svg)
 
 A lightweight, no-frills logging library for Arduino & friends.
 
@@ -14,7 +14,7 @@ A lightweight, no-frills logging library for Arduino & friends.
 ## Example
 
 ```c++
-#define ENABLE_LOG4ARDUINO
+#define ENABLE_LOG4ARDUINO      // opt-in
 #include <log4arduino.h>
 
 void setup() {
