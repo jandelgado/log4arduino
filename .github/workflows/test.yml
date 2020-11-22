@@ -1,0 +1,44 @@
+on:
+  push:
+    branches:
+      - master
+  pull_request:
+    branches:
+      - master
+
+name: build
+jobs:
+  lint:
+    runs-on: ubuntu-latest
+    steps:
+    - name: checkout code
+      uses: actions/checkout@v2
+
+    - name: install python
+      uses: actions/setup-python@v2
+      with:
+        python-version: '3.8'
+
+    - name: linter
+      run: |
+        pip install cpplint
+        make lint
+
+  test:
+    runs-on: ubuntu-latest
+    steps:
+    - name: checkout code
+      uses: actions/checkout@v2
+
+    - name: install python
+      uses: actions/setup-python@v2
+      with:
+        python-version: '3.8'
+
+    - name: install tools
+      run: |
+        pip install platformio==5.0.3
+
+    - name: build examples
+      run: make ci
+
