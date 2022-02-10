@@ -4,7 +4,7 @@
 
 A lightweight, no-frills logging library for Arduino & friends.
 
-* simple interface - just three macros
+* simple interface - just four macros
 * printf-like formatting
 * each log entry is prepended by timestamp and amount of available free RAM
 * automatically uses flash memory to save SRAM (if supported)
@@ -30,9 +30,12 @@ void setup() {
     // use LOGS() for simple logging of single arguments
     const char *pStr = "some string from RAM";
     LOGS(pStr);
-    LOGS(F("this string is stored in flash memory"));
     LOGS(String("some String object"));
     LOGS(123);
+    
+    // these examples are equivalent
+    LOGS(F("this string is stored in flash memory"));
+    FLOGS("this string is also stored in flash memory"));
 }
 
 void loop() { }
@@ -88,7 +91,7 @@ header.  If `ENABLE_LOG4ARDUINO` is not defined, then logging will be disabled
 
 ### Logging interface
 
-3 Macros are used for logging: `LOG_INIT`, `LOG` and `LOGS`:
+4 Macros are used for logging: `LOG_INIT`, `LOG`; `LOGS` and `FLOGS`:
 
 #### LOG_INIT
 
@@ -109,6 +112,11 @@ Use the `LOG(fmt, ...)` macro to log in a
 
 Use the `LOGS(s)` (the *S* stands for *simple*) macro, to directly log out the
 given value using the log target's `print` method.
+
+#### FLOGS(s)
+
+Use the `FLOGS(s)` (the added *F* stands for *flash*) macro, to log out the
+given value (now stored in Flash memory) using the log target's `print` method.
 
 ## A word on log levels
 
