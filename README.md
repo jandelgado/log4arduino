@@ -35,7 +35,7 @@ void setup() {
     
     // these examples are equivalent
     LOGS(F("this string is stored in flash memory"));
-    FLOGS("this string is also stored in flash memory"));
+    FLOGS("this string is also stored in flash memory");
 }
 
 void loop() { }
