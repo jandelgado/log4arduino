@@ -20,12 +20,14 @@ extern void log4arduino_debug_printf(const __FlashStringHelper* fmt, ...);
         _log4arduino_target->println(s); \
     }
 #define LOG(fmt, ...) log4arduino_debug_printf(F(fmt), ##__VA_ARGS__)
+#define FLOGS(s) LOGS(F(s))
 
 #else
 
 #define LOG_INIT(p)
 #define LOG(...)
 #define LOGS(s)
+#define FLOGS(s)
 
 #endif
 
