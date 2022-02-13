@@ -15,6 +15,7 @@
 LOG_INIT	KEYWORD2
 LOG	KEYWORD2
 LOGS	KEYWORD2
+FLOGS	KEYWORD2
 
 #######################################
 # Instances (KEYWORD2)
