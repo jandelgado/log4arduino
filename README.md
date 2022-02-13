@@ -125,7 +125,7 @@ development and we have to keep the memory footprint low. YAGNI.
 
 ## Author
 
-Jan Delgado
+(C) Copyright 2017-2022 by Jan Delgado
 
 ## License
 
